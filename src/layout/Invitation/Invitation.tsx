@@ -3,6 +3,7 @@ import data from 'data.json';
 import Host from '../Contact/Host.tsx';
 import RoundButton from '@/components/RoundButton.tsx';
 import { Caption, Paragraph } from '@/components/Text.tsx';
+import Calendar from '@/components/Calendar.tsx';
 
 const Invitation = () => {
   const { greeting } = data;
@@ -11,6 +12,7 @@ const Invitation = () => {
       <Paragraph>{greeting.message}</Paragraph>
       <Host />
       <Caption textAlign={'center'}>{greeting.eventDetail}</Caption>
+      <Calendar eventDate={"2026-04-05"}></Calendar>
       {/* TODO: 구글캘린더 추가하기 기능을 넣는다면 링크 수정 */}
       <RoundButton
         target="_blank"

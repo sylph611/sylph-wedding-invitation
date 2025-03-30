@@ -61,7 +61,7 @@ const AccountWrap = ({
 };
 
 const Wrapper = styled.div`
-  font-family: 'SUITE-Regular';
+  font-family: 'Iropke Batang';
   padding: 10px 0;
   border-bottom: 1px solid #dfdfdf;
   &:last-of-type {
@@ -80,7 +80,7 @@ const Info = styled.div`
   margin: 5px 0;
 `;
 const Relation = styled.span`
-  color: #44484d;
+  color: #e88ca6;
 `;
 const Name = styled.span`
   font-size: 1rem
