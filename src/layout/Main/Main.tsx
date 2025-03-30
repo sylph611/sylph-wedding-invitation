@@ -9,7 +9,7 @@ const Main = () => {
     <Wrapper>
       <ImageWrapper>
         <MainImg src={mainImg} />
-        <OverlayImg src={overlayImg} />
+        {/* <OverlayImg src={overlayImg} /> */}
       </ImageWrapper>
       <MainTitle>{greeting.title}</MainTitle>
       {/* <SubTitle>{greeting.eventDetail}</SubTitle> */}
@@ -48,16 +48,13 @@ const OverlayImg = styled.img`
 `;
 
 const MainTitle = styled.p`
-  position: absolute;
-  top: 500px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); // 최소 1.5rem ~ 최대 2.5rem, 화면 폭에 따라
   color: #2F2120;
   line-height: 120%;
   white-space: pre-line;
-  z-index: 2; // overlayImg보다 위로
+  z-index: 2;
   text-align: center;
+  margin-top: 1.5rem;
 `;
 
 const SubTitle = styled.p`
