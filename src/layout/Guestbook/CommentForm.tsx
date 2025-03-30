@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
+import RoundButton from '@/components/RoundButton';
 // import { push, ref, serverTimestamp } from 'firebase/database';
 // import { realtimeDb } from '../../firebase.ts';
 
@@ -43,57 +44,67 @@ const CommentForm = () => {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
-      <SubmitButton type="submit">등록</SubmitButton>
+      <RoundButton as="button" type="submit">
+        💌 등록
+      </RoundButton>
     </FormWrapper>
   );
 };
-
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  overflow: visible;
-  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0 20px; /* 좌우 여백 */
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-sizing: border-box;
 `;
+
 
 const NameInput = styled.input`
   width: 100%;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 4px;
+  padding: 10px 12px;
   font-size: 1rem;
-  line-height: 1;
-  outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #444;
   font-family: inherit;
-  font-weight: 300;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    border-color: #e88ca6;
+    outline: none;
+  }
 `;
 
 const MessageInput = styled.textarea`
   width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 4px;
+  height: 120px;
+  padding: 10px 12px;
   font-size: 1rem;
-  line-height: 1.5;
-  outline: none;
-  border: 1px solid #ccc;
-  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #444;
   font-family: inherit;
-  font-weight: 300;
+  resize: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    border-color: #e88ca6;
+    outline: none;
+  }
 `;
 
-const SubmitButton = styled.button`
-  width: 100%;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 1rem;
-  line-height: 1.5;
-  border: 1px solid lightgray;
-  background-color: white;
-  font-family: inherit;
-  font-weight: inherit;
-  color: inherit;
-`;
 export default CommentForm;

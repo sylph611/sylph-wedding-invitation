@@ -12,7 +12,7 @@ const Main = () => {
         <OverlayImg src={overlayImg} />
       </ImageWrapper>
       <MainTitle>{greeting.title}</MainTitle>
-      <SubTitle>{greeting.eventDetail}</SubTitle>
+      {/* <SubTitle>{greeting.eventDetail}</SubTitle> */}
       
     </Wrapper>
   );

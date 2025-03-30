@@ -37,10 +37,7 @@ body {
   font-family: 'Iropke Batang';
   font-style: normal;
   font-weight: 400;
-  src: url(http://cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.eot);
-  src: url(http://cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.eot?#iefix) format('embedded-opentype'),
-       url(http://cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.woff) format('woff'),
-       url(http://cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.ttf) format('truetype');
+  src: url('/fonts/IropkeBatangM.woff') format('woff');
 }
 
 @font-face {

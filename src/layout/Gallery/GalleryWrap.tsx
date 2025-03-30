@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import PhotoGallery from './PhotoGallery.tsx';
+import RoundButton from '@/components/RoundButton';
 
 const GalleryWrap = () => {
   const [isMoreView, setIsMoreView] = useState(false);
@@ -16,7 +17,9 @@ const GalleryWrap = () => {
         <PhotoGallery />
       </ImageMoreWrap>
       {!isMoreView && (
-        <PlusButton onClick={onClickImageMoreViewButton}>더보기</PlusButton>
+        <RoundButton onClick={onClickImageMoreViewButton}>
+          {isMoreView ? '접기' : '더보기'}
+        </RoundButton>
       )}
     </ContentsWrap>
   );
@@ -35,13 +38,12 @@ const ContentsWrap = styled.div`
 
 const ImageMoreWrap = styled.div<{ isMoreView: boolean }>`
   position: relative;
-  max-height: ${(props) =>
-    props.isMoreView
-      ? ''
-      : '60vh'}; /* isMoreView 상태가 true일 때는 높이 제한 없이, false일 때는 195px로 작게 보이도록 */
+  max-height: ${({ isMoreView }) => (isMoreView ? '1000px' : '30vh')}; // 충분히 큰 값으로 설정
   overflow: hidden;
+  transition: max-height 0.5s ease;
 `;
 
+// 그라데이션 오버레이는 닫힌 상태에서만 표시
 const WhiteGradientOverlay = styled.div`
   position: absolute;
   top: 0;
@@ -52,15 +54,5 @@ const WhiteGradientOverlay = styled.div`
     rgba(255, 255, 255, 0) 0%,
     rgb(255, 255, 255) 90%
   );
-`;
-
-const PlusButton = styled.div`
-  width: 100%;
-  box-sizing: border-box;
-  padding: 6px 12px;
-  font-size: 1rem;
-  align-items: center;
-  border-radius: 4px;
-  border: 1px solid #dfdfdf;
-  cursor: pointer;
+  pointer-events: none;
 `;

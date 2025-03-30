@@ -10,7 +10,6 @@ import Guestbook from '@/layout/Guestbook/Guestbook.tsx';
 import Invitation from '@/layout/Invitation/Invitation.tsx';
 //import Location from '@/layout/Location/Location.tsx';
 import Main from '@/layout/Main/Main.tsx';
-import Calendar from './components/Calendar';
 
 function App() {
   const ncpClientId = import.meta.env.VITE_APP_NAVERMAPS_CLIENT_ID;
