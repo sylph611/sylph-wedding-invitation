@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import data from 'data.json';
 import mainImg from '@/assets/images/HG001.png'
-import overlayImg from '@/assets/images/cover-img.png'; // 겹칠 이미지 추가
 
 const Main = () => {
   const { greeting } = data;
